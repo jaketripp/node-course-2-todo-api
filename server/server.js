@@ -9,7 +9,21 @@ var app = express();
 
 var port = process.env.PORT || 3000;
 
-app.listen(port, () => {
+app.use(bodyParser.json());
+
+app.post('/todos', (req,res) => {
+	var todo = new Todo({
+		text: req.body.text
+	});
+
+	todo.save().then((doc) => {
+		res.send(doc);
+	}, (e) => {
+		res.status(400).send(e);
+	});
+});
+
+app.listen(3000, () => {
 	console.log(`Server running on port ${port}`);
 });
 // var newTodo = new Todo({
