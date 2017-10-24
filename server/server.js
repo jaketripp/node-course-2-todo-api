@@ -26,6 +26,8 @@ app.post('/todos', (req,res) => {
 app.listen(3000, () => {
 	console.log(`Server running on port ${port}`);
 });
+
+module.exports = {app};
 // var newTodo = new Todo({
 // 	text: 'Cook dinner'
 // });
@@ -49,14 +51,14 @@ app.listen(3000, () => {
 // 	console.log(e);
 // });
 
-var newUser = new User({
-	email: '  1 '
-});
+// var newUser = new User({
+// 	email: '  1 '
+// });
 
-newUser.save().then((doc) => {
-	console.log('Saved todo');
-	console.log(JSON.stringify(doc, undefined, 2));
-}, (e) => {
-	console.log('Unable to save todo');
-	console.log(e);
-});
+// newUser.save().then((doc) => {
+// 	console.log('Saved todo');
+// 	console.log(JSON.stringify(doc, undefined, 2));
+// }, (e) => {
+// 	console.log('Unable to save todo');
+// 	console.log(e);
+// });
